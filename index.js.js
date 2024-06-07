@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 app.use(cors({ origin: true }));
 
-const mongoURI = 'mongodb+srv://usermed:lasanha12@serverlessinstance0.n9rdiyu.mongodb.net/?retryWrites=true&w=majority&appName=ServerlessInstance0&tls=true&tlsAllowInvalidCertificates=true';
+const mongoURI = 'mongodb+srv://usermed:lasanha12@serverlessinstance0.n9rdiyu.mongodb.net/?retryWrites=true&w=majority&appName=ServerlessInstance0';
 
 mongoose.connect(mongoURI)
     .then(() => console.log('MongoDB connected'))
