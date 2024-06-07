@@ -8,10 +8,14 @@ const app = express();
 app.use(express.json());
 app.use(cors({ origin: true }));
 
-mongoose.connect('mongodb://localhost:27017/myapp', {
+const mongoURI = 'mongodb+srv://daviscatpires:dRVACkGPXIYunNDg@serverlessinstance0.n9rdiyu.mongodb.net/?retryWrites=true&w=majority&appName=ServerlessInstance0';
+
+mongoose.connect(mongoURI, {
   useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+  useUnifiedTopology: true,
+})
+.then(() => console.log('MongoDB connected'))
+.catch((err) => console.log('MongoDB connection error: ', err));
 
 const userSchema = new mongoose.Schema({
   username: String,
